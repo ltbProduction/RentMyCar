@@ -1,47 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Antrag</title>
-    </head>
-    <body style="background-image:url('img/ODRAJ80.jpg')"></bodystyle>
-        <header>
-            <a name="top"></a>
-            <h1>RentMyCar</h1>
-            <h2>Die private Autovermietung.</h2>
-        </header>
+<html lang="en">
 
-        <section>
-            <h2>Antrag auf ein neues Auto</h2>
-            <p>Hier können Sie <b>IHR</b> Auto eintragen, <br/>
-             welches nach einer Prüfung auf unserer Webseite zu finden sein wird.</p>
-        </section>
+<head>
 
-        <section>
-            <p>Fügen Sie bitte hier ihre Daten ein:</p>
-            <form>
-                Ihr Name: <input type="text" placeholder="Max Mustermann"/><br/>
-                Ort: <input type="text" placeholder="Hamburg"/><br/>
-                E-Mail: <input type="e-mail" placeholder= "Mac@Mustermann.com"/><br/>
-                Telefonnummer: <input type="tel" placeholder="01234567890"/><br/>
-                Automarke: <input type="text" placeholder="Volkswagen"/><br/>
-                Autotyp: <input type="text" placeholder="Golf"/><br/>
-                Kraftstoff: 
-                <select>
-                    <option>Diesel</option>
-                    <option>Benzin</option>
-                    <option>Erdgas</option>
-                    <option>Hybrid Elektro-Diesel</option>
-                    <option>Hybrid Elektro-Benzin</option>
-                    <option>Elektro</option>
-                    <option>Wasserstoff</option>
-                </select><br/>
-                Beschreibung:<textarea></textarea><br/>
-                Preis <input type="number" placeholder="0"/><br/>
-            </form>
-        </section>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
+  <title>RentMyCar</title>
 
-    </body>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/the-big-picture.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="#">Rent My Car</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="car_overview.html">Unsere Autos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Stellen Sie ihr Auto online</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="mt-5">Kontaktformular</h1>
+          <p>Fügen Sie bitte hier ihre Daten ein:</p>
+          <form>
+              Ihr Name: <input type="text" placeholder="Max Mustermann"/><br/>
+              Ort: <input type="text" placeholder="Hamburg"/><br/>
+              E-Mail: <input type="e-mail" placeholder= "Mac@Mustermann.com"/><br/>
+              Telefonnummer: <input type="tel" placeholder="01234567890"/><br/>
+              Automarke: <input type="text" placeholder="Volkswagen"/><br/>
+              Autotyp: <input type="text" placeholder="Golf"/><br/>
+              Kraftstoff: 
+              <select>
+                  <option>Diesel</option>
+                  <option>Benzin</option>
+                  <option>Erdgas</option>
+                  <option>Hybrid Elektro-Diesel</option>
+                  <option>Hybrid Elektro-Benzin</option>
+                  <option>Elektro</option>
+                  <option>Wasserstoff</option>
+              </select><br/>
+              Beschreibung:<textarea></textarea><br/>
+              Preis <input type="number" placeholder="0"/><br/>
+          </form>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
 
 </html>
