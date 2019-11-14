@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script type="text/JavaScript" src="js-rental.js"></script>
 
   <title>RentMyCar</title>
 
@@ -60,13 +61,13 @@
           <table>
               <tr><th>Ihr Name: </th> <th><input type="text" id="name" placeholder="Max Mustermann"/></th></tr>
               <tr><th>Ort: </th> <th><input type="text" id="city" placeholder="Hamburg"/></th></tr>
-              <tr><th>E-Mail: </th> <th><input type="e-mail" id="mail" placeholder= "Mac@Mustermann.com"/></th></tr>
+              <tr><th>E-Mail: </th> <th><input type="email" id="email" placeholder= "Mac@Mustermann.com"/></th></tr>
               <tr><th>Telefonnummer: </th> <th><input type="tel" id="phone" placeholder="01234567890"/></th></tr>
               <tr><th>Automarke: </th><th><input type="text" id="brand" placeholder="Volkswagen"/></th></tr>
               <tr><th>Autotyp: </th><th><input type="text" id="type" placeholder="Golf"></th></tr>
               <tr><th>Kraftstoff: </th> <th> 
 
-              <select>
+              <select id="fuel">
                   <option>Diesel</option>
                   <option>Benzin</option>
                   <option>Erdgas</option>
@@ -75,11 +76,11 @@
                   <option>Elektro</option>
                   <option>Wasserstoff</option>
               </select></th></tr>
-              <tr> <th>Beschreibung: </th><th><textarea></textarea></th>
+              <tr> <th>Beschreibung: </th><th><textarea id="description"></textarea></th>
 
-              <tr><th>Preis: </th><th><input type="number" placeholder="0"/></th></tr> 
-              <tr><th>Bild</th><th><input type="file" size="50" accept="image" ></th></tr>        </table>
-              <button>Senden</button>
+              <tr><th>Preis: </th><th><input type="number" id="price" placeholder="0"/></th></tr> 
+              <tr><th>Bild</th><th><input type="file" id="image" size="50" accept="image" ></th></tr>        </table>
+              <button id="#send" onclick=printCar()>Senden</button>
 
           
           
