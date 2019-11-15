@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloWorldServlet extends HttpServlet{
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		;
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		System.out.println(req.getParameter("message"));
+		
 	}
 	
 	
