@@ -15,7 +15,9 @@ import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 public class DatabaseConnection {
 	private static String url = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
-	 public static void main(String[] args) throws ClassNotFoundException {
+	 
+	//Ab Hier ignorieren
+	public static void main(String[] args) throws ClassNotFoundException {
 		 CarElement c1 = new CarElement("Linus Brugger", "Ravensburg", "linus@brugger-rv.de", "01709123866", "Audi", "A4", "Diesel", "Tolles Auto", 1.3);
 		 CarElement c2 = new CarElement("Robin Birkhofer", "Ravensburg", "was", "01709123866", "Renault", "Twingo", "Benzin", "Scheiﬂ Auto", -3);
 
@@ -32,6 +34,7 @@ public class DatabaseConnection {
 		}
 			
 		}
+	//Bis hier
 	 
 	
 	public static void writeToDatabase(CarElement c1) throws ClassNotFoundException {

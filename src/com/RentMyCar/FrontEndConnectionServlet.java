@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontEndConnectionServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		String message = req.getParameter("name");
-//		System.out.println(req.getParameter(message));
+//		String message = req.getParameter("kast");
+//		System.out.println(message);
 	
 		//Create new CarElement
 		CarElement car1 = new CarElement(
@@ -32,4 +32,9 @@ public class FrontEndConnectionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	
+//	public void writecarelements(ArrayList<CarElement> cars) {
+//		for (cars c : )
+//	}
+	
 }
