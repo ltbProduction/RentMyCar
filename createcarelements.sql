@@ -3,7 +3,7 @@ create table if not exists carelement (
 	element_id int(6) AUTO_INCREMENT PRIMARY KEY,
     persName VARCHAR(40) NOT NULL,
     email VARCHAR(60) NOT NULL,
-	phonennumber VARCHAR (20),
+	phonenumber VARCHAR (20),
     carbrand Varchar (40) NOT NULL,
     cartyp Varchar (40),
     fueltyp Varchar (30) NOT NULL,
