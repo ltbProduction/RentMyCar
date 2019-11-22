@@ -4,11 +4,11 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
   <servlet>
-    <servlet-name>helloworldsevlet</servlet-name>
-    <servlet-class>com.RentMyCar.HelloWorldServlet</servlet-class>
+    <servlet-name>FrontEndConnectionServlet</servlet-name>
+    <servlet-class>com.RentMyCar.FrontEndConnectionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>helloworldsevlet</servlet-name>
-    <url-pattern>/hello-world</url-pattern>
+    <servlet-name>FrontEndConnectionServlet</servlet-name>
+    <url-pattern>/new-element</url-pattern>
   </servlet-mapping>
 </web-app>

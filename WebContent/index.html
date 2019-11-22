@@ -87,7 +87,7 @@
           <br>
           <br>
           <br>
-                              Message:
+                              Messages:
                     <input id="message" type="text">
                     <button id="send">Send</button>
         </div>
@@ -101,8 +101,9 @@
  	<script>
  	$(document).ready( function() {
   	     $('#send').on("click", function() {
+  	    	 
          	  $.post(
-          	 '/RentMyCar/hello-world',
+          	 '/RentMyCar/new-element',
           	 {
          	      message : $("#message").val()
         	   },

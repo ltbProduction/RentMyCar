@@ -80,7 +80,7 @@
 
               <tr><th>Preis: </th><th><input type="number" id="price" placeholder="0"/></th></tr> 
               <tr><th>Bild</th><th><input type="file" id="image" size="50" accept="image" ></th></tr>        </table>
-              <button id="#send" onclick=printCar()>Senden</button>
+              <button id="#sendcar" onclick=printCar()>Senden</button>
 
           
           
@@ -92,7 +92,30 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+ 	<script>
+ 	$(document).ready( function() {
+  	     $('#sendcar').on("click", function() {
+  	    	 
+         	  $.post(
+          	 '/RentMyCar/new-element',
+          	 {
+         	    name : $("#name").val(),
+         	    city : $("#city").val(),
+         	    email : $("#email").val(),
+         	    phone : $("#phone").val(),
+         	    brand : $("#brand").val(),
+         	    type : $("#type").val(),
+         	    fuel : $("#fuel").val(),
+        	   	price : $("#price").val()
+        	   <!--	picture : $("#picture").val() -->
+          	          	 
+          	 },
+        	   function(result) {
+        	       console.log("worked!");
+       	    }
+   	    )
+    	   })
+ 	  })</script>
 </body>
 
 
