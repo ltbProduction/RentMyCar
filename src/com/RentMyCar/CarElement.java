@@ -1,6 +1,7 @@
 package com.RentMyCar;
 
 import java.sql.Blob;
+import java.sql.Date;
 
 public class CarElement {
 
@@ -29,6 +30,7 @@ public class CarElement {
 		this.fuel = fuel;
 		this.description = description;
 		this.price = price;
+
 		//this.picture = picture;
 	}
 
@@ -92,4 +94,13 @@ public class CarElement {
 	public void setPicture(Blob picture) {
 		this.picture = picture;
 	}
+	public Date getCreated_at() {
+		return created_at;
+	}
+
+	public void setCreated_at(Date created_at) {
+		this.created_at = created_at;
+	}
+	private Date created_at;
+
 }
