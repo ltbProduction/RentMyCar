@@ -18,16 +18,16 @@ public class DatabaseConnection {
 	 
 	//Ab Hier ignorieren
 	public static void main(String[] args) throws ClassNotFoundException {
-		 CarElement c1 = new CarElement("Linus Brugger", "Ravensburg", "linus@brugger-rv.de", "01709123866", "Audi", "A4", "Diesel", "Tolles Auto", 1.3);
-		 CarElement c2 = new CarElement("Robin Birkhofer", "Ravensburg", "was", "01709123866", "Renault", "Twingo", "Benzin", "Scheiﬂ Auto", -3);
-
-
-			
-			 writeToDatabase(c1);
-			 writeToDatabase(c2);
+//		 CarElement c1 = new CarElement("Linus Brugger", "Ravensburg", "linus@brugger-rv.de", "01709123866", "Audi", "A4", "Diesel", "Tolles Auto", 1.3);
+//		 CarElement c2 = new CarElement("Robin Birkhofer", "Ravensburg", "was", "01709123866", "Renault", "Twingo", "Benzin", "Scheiﬂ Auto", -3);
+//
+//
+//			
+//			 writeToDatabase(c1);
+//			 writeToDatabase(c2);
 		ArrayList<CarElement> cars = new ArrayList<>();
 		cars = readfromDatabase();
-		
+		FrontEndConnectionServlet.writecarelements(DatabaseConnection.readfromDatabase());
 		for(CarElement c : cars){
 			System.out.println(c.getFuel());
 			System.out.println(c.getName());
@@ -105,7 +105,7 @@ public class DatabaseConnection {
 		    {
 	
 
-	}
+	}		
 			return cars;
 	  
 	}

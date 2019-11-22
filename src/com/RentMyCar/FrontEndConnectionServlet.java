@@ -1,6 +1,7 @@
 package com.RentMyCar;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,9 +33,11 @@ public class FrontEndConnectionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
-//	public void writecarelements(ArrayList<CarElement> cars) {
-//		for (cars c : )
-//	}
+	// Dieser Befehl muss ausgelöst damit die ArraList aktuell ist ->  writecarelements(readdatabase());
+	public static void writecarelements(ArrayList<CarElement> cars) {
+		for (CarElement c : cars  ) {
+			//Hier kommt der Inhalt der car_overview html für jedes c ein 
+		}
+	}
 	
 }
