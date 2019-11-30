@@ -82,12 +82,14 @@
           <br>
 
           <a href="car_overview.html"><button>Zu unseren Autos</button></a>
-
+			
           <br>
           <br>
           <br>
           <br>
-          
+                              Messages:
+                    <input id="message" type="text">
+                    <button id="send">Send</button>
         </div>
       </div>
     </div>
@@ -96,7 +98,21 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+ 	<script>
+ 	$(document).ready( function() {
+  	     $('#send').on("click", function() {
+  	    	 
+         	  $.post(
+          	 '/RentMyCar/new-element',
+          	 {
+         	      kast : $("#message").val(),
+        	   },
+        	   function(result) {
+        	       console.log("worked!");
+       	    }
+   	    )
+    	   })
+ 	  })</script>
 </body>
 
 </html>
