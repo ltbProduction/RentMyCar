@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="car_overview.html">Unsere Autos</a>
+            <a class="nav-link" href="cars">Unsere Autos</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="contacts.html">Stellen Sie ihr Auto online</a>
@@ -97,7 +97,7 @@
   	     $('#sendcar').on("click", function() {
   	    	 
          	  $.post(
-          	 '/RentMyCar/new-element',
+          	 '/RentMyCar2/cars',
           	 {
          	    name : $("#name").val(),
          	    city : $("#city").val(),

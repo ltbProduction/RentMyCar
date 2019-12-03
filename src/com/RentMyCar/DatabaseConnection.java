@@ -27,7 +27,7 @@ public class DatabaseConnection {
 //			 writeToDatabase(c2);
 		ArrayList<CarElement> cars = new ArrayList<>();
 		cars = readfromDatabase();
-		FrontEndConnectionServlet.writecarelements(DatabaseConnection.readfromDatabase());
+//		FrontEndConnectionServlet.writecarelements(DatabaseConnection.readfromDatabase());
 		for(CarElement c : cars){
 			System.out.println(c.getFuel());
 			System.out.println(c.getName());
