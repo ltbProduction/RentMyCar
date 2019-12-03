@@ -17,6 +17,42 @@
   <!-- Custom styles for this template -->
   <link href="css/the-big-picture.css" rel="stylesheet">
 
+
+  <style>
+
+button {
+   font-size: 1.3em; padding: 5px 12px; 
+   font-family: Roboto, sans-serif;
+   font-weight: 300;
+   color: teal;
+   border: 1px solid silver;
+   background-image: linear-gradient(to top, gainsboro 0%, white 90%);
+   border-radius: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea { 
+  width: 100%; min-width: 100%; 
+  box-sizing: border-box;
+  padding: 4px;
+  outline: none;
+}
+
+
+
+select {
+   background-color: white; 
+   width: 180px; 
+   font-size: 1.1em; 
+   font-family: inherit;
+   font-weight: 300;
+   
+}
+
+    </style>
+
 </head>
 
 <body>
@@ -57,15 +93,140 @@
           <h1 class="mt-5">Kontaktformular</h1>
           <p>Fügen Sie bitte hier ihre Daten ein:</p>
 
+
+
+        <!-- neu ab hier (funktioniert nicht wirklich) -->
+        <!--
+
+        <div class="row body">
+          <form action="#">
+            <ul>
+              
+              <li>
+                <p class="left">
+                  <label for="first_name">Name</label>
+                  <input type="text" id="name" placeholder="Max Mustermann"/> 
+                </p>
+                <p class="pull-right">
+                  <label for="city">Ort</label>
+                  <input type="text" id="city" placeholder="Musterstadt"/>      
+                </p>
+              </li>
+              
+              <li>
+                <p>
+                  <label for="email">E-mail <span class="req">*</span></label>
+                  <input type="email" id="email" placeholder= "Max@Mustermann.com" />
+                </p>
+              </li>      
+              
+              <li>
+                <p>
+                  <label for="number">Telefonnummer <span class="req">*</span></label>
+                  <input type="tel" id="phone" placeholder="01234567890" />
+                </p>
+              </li>     
+
+              <li>
+                <p>
+                  <label for="brand">Automarke <span class="req">*</span></label>
+                  <input type="text" id="brand" placeholder="Volkswagen" />
+                </p>
+              </li> 
+
+              
+              <li>
+                <p>
+                  <label for="type">Autotyp <span class="req">*</span></label>
+                  <input type="text" id="type" placeholder="Golf"> 
+                </p>
+              </li> 
+
+              <li>
+                <p>
+                  <label for="fueltype">Kraftstoff <span class="req">*</span></label>
+              <select id="fuel">
+                <option>Diesel</option>
+                <option>Benzin</option>
+                <option>Erdgas</option>
+                <option>Hybrid Elektro-Diesel</option>
+                <option>Hybrid Elektro-Benzin</option>
+                <option>Elektro</option>
+                <option>Wasserstoff</option>
+            </select>
+                </p>
+               </li> 
+
+              <li>
+                <label for="comments">Beschreibung</label>
+                <textarea cols="46" rows="3" name="comments" id="description"></textarea>
+              </li>
+
+
+              <li>
+                <p>
+                  <label for="price">Preis <span class="req">*</span></label>
+                  <input type="number" id="price" placeholder="0"> 
+                </p>
+              </li> 
+
+              <li>
+                <p>
+                  <label for="picture">Bild<span class="req">*</span></label>
+                  <input type="file" id="image" size="50" accept="image"> 
+                </p>
+              </li> 
+              
+
+              <li>
+                <input class="btn btn-submit" type="submit" value="Submit" />
+                <small>or press <strong>enter</strong></small>
+              </li>
+            
+              
+            </ul>
+          </form>  
+        </div>
+      </div>
+      -->
+
+      
+
+
+          
           
           <table>
-              <tr><th>Ihr Name: </th> <th><input type="text" id="name" placeholder="Max Mustermann"/></th></tr>
-              <tr><th>Ort: </th> <th><input type="text" id="city" placeholder="Hamburg"/></th></tr>
-              <tr><th>E-Mail: </th> <th><input type="email" id="email" placeholder= "Mac@Mustermann.com"/></th></tr>
-              <tr><th>Telefonnummer: </th> <th><input type="tel" id="phone" placeholder="01234567890"/></th></tr>
-              <tr><th>Automarke: </th><th><input type="text" id="brand" placeholder="Volkswagen"/></th></tr>
-              <tr><th>Autotyp: </th><th><input type="text" id="type" placeholder="Golf"></th></tr>
-              <tr><th>Kraftstoff: </th> <th> 
+              <tr><th style="text-align: right;">Name</th> <th><input type="text" id="name" placeholder="Max Mustermann"/></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Ort </th> <th><input type="text" id="city" placeholder="Musterstadt"/></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">E-Mail </th> <th><input type="email" id="email" placeholder= "Max@Mustermann.com"/></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Telefonnummer </th> <th><input type="tel" id="phone" placeholder="01234567890"/></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Automarke </th><th><input type="text" id="brand" placeholder="Volkswagen"/></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Autotyp </th><th><input type="text" id="type" placeholder="Golf"></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Kraftstoff </th> <th> 
 
               <select id="fuel">
                   <option>Diesel</option>
@@ -76,11 +237,34 @@
                   <option>Elektro</option>
                   <option>Wasserstoff</option>
               </select></th></tr>
-              <tr> <th>Beschreibung: </th><th><textarea id="description"></textarea></th>
-
-              <tr><th>Preis: </th><th><input type="number" id="price" placeholder="0"/></th></tr> 
-              <tr><th>Bild</th><th><input type="file" id="image" size="50" accept="image" ></th></tr>        </table>
-              <button id="sendcar" onclick=printCar()>Senden</button>
+              
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Preis </th><th><input type="number" id="price" placeholder="0"/></th></tr> 
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;">Bild</th><th><input type="file" id="image" size="50" accept="image" ></th></tr>   
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr> <th style="text-align: right";> Beschreibung </th><th><textarea id="description"></textarea></th>
+     
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th></th><th></th></tr>
+              <tr><th style="text-align: right;"></th><th><button id="sendcar" onclick=printCar()>Senden</button></th></tr> 
+             
+            </table>
+              
+         
+            
 
           
           
