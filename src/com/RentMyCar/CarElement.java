@@ -6,6 +6,7 @@ import java.sql.Date;
 public class CarElement {
 
 	//Attribute eines Eintrages
+	private int element_id;
 	private String name;
 	private String ort;
 	private String mail;
@@ -15,12 +16,13 @@ public class CarElement {
 	private String fuel;
 	private String description;
 	private double price;
-	private Blob picture;
+	private String image;
 	
 	
 	
-	public CarElement(String name, String ort, String mail, String phonenumber, String brand, String type, String fuel,
+	public CarElement(int element_id, String name, String ort, String mail, String phonenumber, String brand, String type, String fuel,
 			String description, double price) {
+		this.element_id = element_id;
 		this.name = name;
 		this.ort = ort;
 		this.mail = mail;
@@ -88,11 +90,11 @@ public class CarElement {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public Blob getPicture() {
-		return picture;
+	public String getImage() {
+		return image;
 	}
-	public void setPicture(Blob picture) {
-		this.picture = picture;
+	public void setImage(String picture) {
+		this.image = picture;
 	}
 	public Date getCreated_at() {
 		return created_at;
@@ -100,6 +102,13 @@ public class CarElement {
 
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
+	}
+	public int getElement_id() {
+		return element_id;
+	}
+
+	public void setElement_id(int element_id) {
+		this.element_id = element_id;
 	}
 	private Date created_at;
 

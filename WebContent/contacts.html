@@ -252,7 +252,7 @@ select {
               <tr><th></th><th></th></tr>
               <tr><th></th><th></th></tr>
               <tr><th></th><th></th></tr>
-              <tr> <th style="text-align: right";> Beschreibung </th><th><textarea id="description"></textarea></th>
+              <tr><th style="text-align: right;">Beschreibung </th> <th> <textarea id="description" name="description" cols="35" rows="4"></textarea> 	</th> 
      
               <tr><th></th><th></th></tr>
               <tr><th></th><th></th></tr>
@@ -290,8 +290,9 @@ select {
          	    brand : $("#brand").val(),
          	    type : $("#type").val(),
          	    fuel : $("#fuel").val(),
-        	   	price : $("#price").val()
-        	   <!--	picture : $("#picture").val() -->
+        	   	price : $("#price").val(),
+        	   	description : $("#description").val(),
+        	    image : $("#image").val()
           	          	 
           	 },
         	   function(result) {

@@ -43,7 +43,8 @@ public class DatabaseConnection {
 			Connection conn = DriverManager.getConnection(url, "root", "RentMyCar2019");
 			Statement statement = conn.createStatement();
 			String datac1;
-			datac1 = "'"+c1.getName()+"',";
+			datac1 = String.valueOf(c1.getElement_id())+ ",";
+			datac1 = datac1 + "'"+c1.getName()+"',";
 			datac1 = datac1 + "'"+c1.getOrt()+"',";
 			datac1 = datac1 + "'"+c1.getMail()+"',";			
 			datac1 = datac1 + "'"+c1.getPhonenumber()+"',";
@@ -53,7 +54,7 @@ public class DatabaseConnection {
 			datac1 = datac1 + "'"+String.valueOf(c1.getPrice())+"',";
 			datac1 = datac1 + "'"+c1.getDescription()+"'";
 			
-			String insert = "insert into carelement(persName, location, email, phonenumber, carbrand, cartyp, fueltyp, price, description_text) values ("+datac1+")";
+			String insert = "insert into carelement(element_id, persName, location, email, phonenumber, carbrand, cartyp, fueltyp, price, description_text) values ("+datac1+")";
 			
 			statement.executeUpdate(insert);
 		
@@ -84,7 +85,9 @@ public class DatabaseConnection {
 		      {
 		    	 
 		      
-		    	CarElement ce = new CarElement(rs.getString("persName"),
+		    	CarElement ce = new CarElement(
+		    					rs.getInt("element_id"),
+		    					rs.getString("persName"),
 								rs.getString("location"), 
 								rs.getString("email"), 
 								rs.getString("phonenumber"), 
