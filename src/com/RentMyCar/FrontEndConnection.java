@@ -130,9 +130,9 @@ public class FrontEndConnection extends HttpServlet {
 		// TODO Auto-generated method stub
 		CarElement car1 = new CarElement(
 				request.getParameter("name"), 
-				request.getParameter("ort"), 
+				request.getParameter("city"), 
 				request.getParameter("email"),
-				request.getParameter("phonenumber"), 
+				request.getParameter("phone"), 
 				request.getParameter("brand"),
 				request.getParameter("type"),
 				request.getParameter("fuel"),
