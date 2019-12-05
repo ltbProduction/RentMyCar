@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.jni.File;
+
 /**
  * Servlet implementation class HalloServlet
  */
@@ -58,7 +60,7 @@ public class FrontEndConnection extends HttpServlet {
         		"            </a>\r\n" + 
         		"          </li>\r\n" + 
         		"          <li class=\"nav-item active\">\r\n" + 
-        		"            <a class=\"nav-link\" href=\"car_overview.html\">Unsere Autos</a>\r\n" + 
+        		"            <a class=\"nav-link\" href=\"cars\">Unsere Autos</a>\r\n" + 
         		"          </li>\r\n" + 
         		"          <li class=\"nav-item\">\r\n" + 
         		"            <a class=\"nav-link\" href=\"contacts.html\">Stellen Sie ihr Auto online</a>\r\n" + 
@@ -82,7 +84,7 @@ public class FrontEndConnection extends HttpServlet {
         
         for (CarElement c : cars  ) {
             
-            out.println("<div class=\"card\" style=\"width: 18rem;\">\r\n" + 
+            out.println("<div class=\"card\" style=\"width: flex;\">\r\n" + 
             		"  <img src=\"img\\1559835101_mst.jpg\" class=\"card-img-top\" alt=\"...\">\r\n" + 
             		"  <div class=\"card-body\">\r\n" + 
             		"    <h5 class=\"card-title\">"+c.getBrand()+" "+c.getType()+"</h5>\r\n" + 
@@ -103,10 +105,13 @@ public class FrontEndConnection extends HttpServlet {
             		"            <br>\r\n" + 
             		"            <strong>Preis pro Stunde:</strong> "+c.getPrice()+" EUR\r\n" + 
             		"            <br>	\r\n" + 
+            		"            <strong>Beschreibung:</strong> "+c.getDescription()+" \r\n" + 
+            		"            <br>	\r\n" + 
             		"	</p>\r\n" + 
             		"    <a href=\"#\" class=\"btn btn-primary\">Mieten</a>\r\n" + 
             		"  </div>\r\n" + 
-            		"</div>");
+            		"</div>"
+            		+ "<br>");
 		}
         
 
@@ -128,16 +133,22 @@ public class FrontEndConnection extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		int element_id = DatabaseConnection.readfromDatabase().size()+1;
 		CarElement car1 = new CarElement(
+				element_id,
 				request.getParameter("name"), 
-				request.getParameter("ort"), 
+				request.getParameter("city"), 
 				request.getParameter("email"),
-				request.getParameter("phonenumber"), 
+				request.getParameter("phone"), 
 				request.getParameter("brand"),
 				request.getParameter("type"),
 				request.getParameter("fuel"),
 				request.getParameter("description"),
 				Double.parseDouble(request.getParameter("price")));
+		//Speicher bild
+//		File image = new File();
+//		image = request.getParameter("image");
+		
 		
 		try {
 			DatabaseConnection.writeToDatabase(car1);

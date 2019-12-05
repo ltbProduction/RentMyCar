@@ -1,6 +1,6 @@
 use rentmycar;
 create table if not exists carelement (
-	element_id int(6) AUTO_INCREMENT PRIMARY KEY,
+	element_id int(6) PRIMARY KEY,
     persName VARCHAR(40) NOT NULL,
     location VARCHAR(40) NOT NULL,
     email VARCHAR(60) NOT NULL,
@@ -10,7 +10,7 @@ create table if not exists carelement (
     fueltyp Varchar (30) NOT NULL,
     price decimal (6,2) Not null,
     description_text text,
-    photo blob,
+    image varchar(30),
     starttime date,
     endtime date,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
