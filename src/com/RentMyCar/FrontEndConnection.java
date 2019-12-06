@@ -46,7 +46,7 @@ public class FrontEndConnection extends HttpServlet {
         		"</head>");
  
         out.println("<body>");
-        out.println(" <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\r\n" + 
+        out.println(" <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top>\">\r\n" + 
         		"    <div class=\"container\">\r\n" + 
         		"      <a class=\"navbar-brand\" href=\"#\">Rent My Car</a>\r\n" + 
         		"      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n" + 
