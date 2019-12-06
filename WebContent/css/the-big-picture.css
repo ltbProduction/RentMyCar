@@ -11,10 +11,6 @@ body {
   -o-background-size: cover;
 }
 
-h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 60px;
-}
 
 input[type="submit"] {
   font-size: 1.3em; padding: 5px 12px; 
@@ -24,4 +20,12 @@ input[type="submit"] {
   border: 1px solid silver;
   background-image: linear-gradient(to top, gainsboro 0%, white 90%);
   border-radius: 20px;
+}
+
+tr.spacer {
+	height: 10px;
+}
+
+div.col-lg-6 {
+	margin-bottom: 10%;
 }

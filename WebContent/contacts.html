@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="img\car_logo.jpg">
+
+  <link rel="icon" type="image/vnd.microsoft.icon" href="img\car_logo.jpg">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <script type="text/JavaScript" src="js-rental.js"></script>
 
   <title>RentMyCar</title>
 
@@ -17,48 +17,12 @@
   <!-- Custom styles for this template -->
   <link href="css/the-big-picture.css" rel="stylesheet">
 
-
-  <style>
-
-button {
-   font-size: 1.3em; padding: 5px 12px; 
-   font-family: Roboto, sans-serif;
-   font-weight: 300;
-   color: teal;
-   border: 1px solid silver;
-   background-image: linear-gradient(to top, gainsboro 0%, white 90%);
-   border-radius: 20px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="search"],
-textarea { 
-  width: 100%; min-width: 100%; 
-  box-sizing: border-box;
-  padding: 4px;
-  outline: none;
-}
-
-
-
-select {
-   background-color: white; 
-   width: 180px; 
-   font-size: 1.1em; 
-   font-family: inherit;
-   font-weight: 300;
-   
-}
-
-    </style>
-
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top>">
     <div class="container">
       <a class="navbar-brand" href="index.html">Rent My Car</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,7 +30,7 @@ select {
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
@@ -74,7 +38,7 @@ select {
           <li class="nav-item">
             <a class="nav-link" href="cars">Unsere Autos</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="contacts.html">Stellen Sie ihr Auto online</a>
           </li>
           <li class="nav-item">
@@ -86,197 +50,83 @@ select {
   </nav>
 
   <!-- Page Content -->
-  <section>
+ <!--  --> <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <h1 class="mt-5">Kontakt</h1>
+          <h1 class="mt-5">Kontaktformular</h1>
           <p>Geben Sie Ihre Kontaktdaten und Ihre Fahrzeugdaten ein:</p>
 
 
+  
+  
+  <form>
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Mustermann" value="" required="required">
+  </div>
+  <div class="form-group">
+    <label for="Ort">Ort</label>
+    <input type="text" class="form-control" id="ort" placeholder="Musterstadt" value="" required="required">
+  </div>
+  <div class="form-group">
+    <label for="InputEmail">E-Mail</label>
+    <input type="email" class="form-control" id="email" placeholder="E-Mail" value="" required="required">
+  </div>
+  <div class="form-group">
+    <label for="PhoneNumber">Telefonnummer</label>
+    <input type="tel" class="form-control" id="phone" placeholder="Telefonnummer" value="" required="required">
+  </div>
+  <div class="form-group">
+    <label for="CarBrand">Automarke</label>
+    <input type="text" class="form-control" id="brand" placeholder="Automarke" value="" required="required">
+  </div>
+  <div class="form-group">
+    <label for="CarType">Modell</label>
+    <input type="text" class="form-control" id="type" placeholder="Modell" value="" required="required">
+  </div>
+  <div class="form-group">
+    <label for="FuelType">Kraftstoff</label>
+    <select class="custom-select" id="fuel">
+    	<option>Diesel</option>
+    	<option>Benzin</option>
+    	<option>Erdgas</option>
+    	<option>Hybrid Elektro-Diesel</option>
+    	<option>Hybrid Elektro-Benzin</option>
+    	<option>Elektro</option>
+    	<option>Wasserstoff</option>
+   </select>
+  </div>
+  
+  
+ <div class="form-group">
+    <label for="Price">Preis pro Tag in €</label>
+    <input type="number" class="form-control" id="price" step=1 min=0 max=500 placeholder="Preis pro Tag in €" value="" required="required">
+  </div>
+    <div class="form-group">
+    <label for="Image">Bild</label>
+    <input type="file" class="form-control-file" id="image" placeholder="Bild" >
+  </div>
+  <div class="form-group">
+    <label for="Description">Beschreibung</label>
+    <textarea class="form-control" id="description" placeholder="Erzählen Sie etwas über Ihr Auto" rows="5" required="required"></textarea>
+  </div>
+  
+  
+  
+  
+  
+  <button type="submit" class="btn btn-primary" id="sendcar">Einstellen</button>
+</form>
 
-        <!-- neu ab hier (funktioniert nicht wirklich) -->
-        <!--
-
-        <div class="row body">
-          <form action="#">
-            <ul>
-              
-              <li>
-                <p class="left">
-                  <label for="first_name">Name</label>
-                  <input type="text" id="name" placeholder="Max Mustermann"/> 
-                </p>
-                <p class="pull-right">
-                  <label for="city">Ort</label>
-                  <input type="text" id="city" placeholder="Musterstadt"/>      
-                </p>
-              </li>
-              
-              <li>
-                <p>
-                  <label for="email">E-mail <span class="req">*</span></label>
-                  <input type="email" id="email" placeholder= "Max@Mustermann.com" />
-                </p>
-              </li>      
-              
-              <li>
-                <p>
-                  <label for="number">Telefonnummer <span class="req">*</span></label>
-                  <input type="tel" id="phone" placeholder="01234567890" />
-                </p>
-              </li>     
-
-              <li>
-                <p>
-                  <label for="brand">Automarke <span class="req">*</span></label>
-                  <input type="text" id="brand" placeholder="Volkswagen" />
-                </p>
-              </li> 
-
-              
-              <li>
-                <p>
-                  <label for="type">Autotyp <span class="req">*</span></label>
-                  <input type="text" id="type" placeholder="Golf"> 
-                </p>
-              </li> 
-
-              <li>
-                <p>
-                  <label for="fueltype">Kraftstoff <span class="req">*</span></label>
-              <select id="fuel">
-                <option>Diesel</option>
-                <option>Benzin</option>
-                <option>Erdgas</option>
-                <option>Hybrid Elektro-Diesel</option>
-                <option>Hybrid Elektro-Benzin</option>
-                <option>Elektro</option>
-                <option>Wasserstoff</option>
-            </select>
-                </p>
-               </li> 
-
-              <li>
-                <label for="comments">Beschreibung</label>
-                <textarea cols="46" rows="3" name="comments" id="description"></textarea>
-              </li>
-
-
-              <li>
-                <p>
-                  <label for="price">Preis <span class="req">*</span></label>
-                  <input type="number" id="price" placeholder="0"> 
-                </p>
-              </li> 
-
-              <li>
-                <p>
-                  <label for="picture">Bild<span class="req">*</span></label>
-                  <input type="file" id="image" size="50" accept="image"> 
-                </p>
-              </li> 
-              
-
-              <li>
-                <input class="btn btn-submit" type="submit" value="Submit" />
-                <small>or press <strong>enter</strong></small>
-              </li>
-            
-              
-            </ul>
-          </form>  
-        </div>
-      </div>
-      -->
-
-      
-
-
-          
-          
-          <table>
-              <tr><th style="text-align: right;">Name</th> <th><input type="text" id="name" placeholder="Max Mustermann"/></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Ort </th> <th><input type="text" id="city" placeholder="Musterstadt"/></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">E-Mail </th> <th><input type="email" id="email" placeholder= "Max@Mustermann.com"/></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Telefonnummer </th> <th><input type="tel" id="phone" placeholder="01234567890"/></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Automarke </th><th><input type="text" id="brand" placeholder="Volkswagen"/></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Autotyp </th><th><input type="text" id="type" placeholder="Golf"></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Kraftstoff </th> <th> 
-
-              <select id="fuel">
-                  <option>Diesel</option>
-                  <option>Benzin</option>
-                  <option>Erdgas</option>
-                  <option>Hybrid Elektro-Diesel</option>
-                  <option>Hybrid Elektro-Benzin</option>
-                  <option>Elektro</option>
-                  <option>Wasserstoff</option>
-              </select></th></tr>
-              
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Preis </th><th><input type="number" id="price" placeholder="0"/></th></tr> 
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Bild</th><th><input type="file" id="image" size="50" accept="image" ></th></tr>   
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;">Beschreibung </th> <th> <textarea id="description" name="description" cols="35" rows="4"></textarea> 	</th> 
-     
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th></th><th></th></tr>
-              <tr><th style="text-align: right;"></th><th><button id="sendcar" onclick=printCar()>Senden</button></th></tr> 
-             
-            </table>
-
-            <br>
-            <br>
-            <br>
-            <br>
-              
-         
-            
-
-          
-          
-        </div>
+ </div>
       </div>
     </div>
   </section>
+
+
+
+  
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -295,9 +145,8 @@ select {
          	    brand : $("#brand").val(),
          	    type : $("#type").val(),
          	    fuel : $("#fuel").val(),
-        	   	price : $("#price").val(),
-        	   	description : $("#description").val(),
-        	    image : $("#image").val()
+        	   	price : $("#price").val()
+        	   <!--	picture : $("#picture").val() -->
           	          	 
           	 },
         	   function(result) {
