@@ -1,8 +1,8 @@
 
 # RentMyCar
-Web Development DHBW Ravensburg WWI118
-Group: RentMyCar
-Contributors: Linus Brugger, Lukas Blunck, Robin Birkhofer
+* Web Development DHBW Ravensburg WWI118
+* Group: RentMyCar
+* Contributors: Linus Brugger, Lukas Blunck, Robin Birkhofer
 
 ## Documentation
 With the help of this web-application, the users can publish their cars which they want to rent to other people. The users can put several specifications about their cars in a form on the website. The data is saved on a database. The users are also able to display an overview about the cars of other people with the specifications of the cars. The website helps to rent cars which are shown on the overview for a specific price.  
