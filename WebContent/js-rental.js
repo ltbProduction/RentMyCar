@@ -6,7 +6,7 @@ function emailveri(email) {
 
 function printCar() {
     let name = $('#name').value;
-    let city = $('#city').value;
+    let location = $('#location').value;
     let email = $('#email').value;
 
 if (!emailveri(email)) {
@@ -22,7 +22,7 @@ if (!emailveri(email)) {
     let price = $('#price').value;;
     let description = $('#description').value;;
     let image = $('#image').value;
-    console.log(name, city, email, phone, brand, type, fuel, description, image, price);
+    console.log(name, location, email, phone, brand, type, fuel, description, image, price);
 
 }
 
