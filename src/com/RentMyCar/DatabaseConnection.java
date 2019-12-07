@@ -19,7 +19,7 @@ public class DatabaseConnection {
 	//Ab Hier ignorieren
 	public static void main(String[] args) throws ClassNotFoundException {
 //		 CarElement c1 = new CarElement("Linus Brugger", "Ravensburg", "linus@brugger-rv.de", "01709123866", "Audi", "A4", "Diesel", "Tolles Auto", 1.3);
-//		 CarElement c2 = new CarElement("Robin Birkhofer", "Ravensburg", "was", "01709123866", "Renault", "Twingo", "Benzin", "Scheiß Auto", -3);
+//		 CarElement c2 = new CarElement("Robin Birkhofer", "Ravensburg", "was", "01709123866", "Renault", "Twingo", "Benzin", "Scheiï¿½ Auto", -3);
 //
 //
 //			
@@ -45,7 +45,7 @@ public class DatabaseConnection {
 			String datac1;
 			datac1 = String.valueOf(c1.getElement_id())+ ",";
 			datac1 = datac1 + "'"+c1.getName()+"',";
-			datac1 = datac1 + "'"+c1.getOrt()+"',";
+			datac1 = datac1 + "'"+c1.getLocation()+"',";
 			datac1 = datac1 + "'"+c1.getMail()+"',";			
 			datac1 = datac1 + "'"+c1.getPhonenumber()+"',";
 			datac1 = datac1 + "'"+c1.getBrand()+"',";

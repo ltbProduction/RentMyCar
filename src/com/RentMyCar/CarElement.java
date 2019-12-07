@@ -8,7 +8,7 @@ public class CarElement {
 	//Attribute eines Eintrages
 	private int element_id;
 	private String name;
-	private String ort;
+	private String location;
 	private String mail;
 	private String phonenumber;
 	private String brand;
@@ -20,11 +20,11 @@ public class CarElement {
 	
 	
 	
-	public CarElement(int element_id, String name, String ort, String mail, String phonenumber, String brand, String type, String fuel,
+	public CarElement(int element_id, String name, String location, String mail, String phonenumber, String brand, String type, String fuel,
 			String description, double price) {
 		this.element_id = element_id;
 		this.name = name;
-		this.ort = ort;
+		this.location = location;
 		this.mail = mail;
 		this.phonenumber = phonenumber;
 		this.brand = brand;
@@ -42,11 +42,11 @@ public class CarElement {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getOrt() {
-		return ort;
+	public String getLocation() {
+		return location;
 	}
-	public void setOrt(String ort) {
-		this.ort = ort;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	public String getMail() {
 		return mail;

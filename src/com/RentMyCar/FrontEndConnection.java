@@ -77,8 +77,7 @@ public class FrontEndConnection extends HttpServlet {
         		"      <div class=\"row\">\r\n" + 
         		"        <div class=\"col-lg-6\">\r\n" + 
         		"          <h1 class=\"mt-5\">Autos</h1>\r\n" + 
-        		"          <section>\r\n" + 
-        		"            <h2>Uebersicht ueber die Autos</h2>\r\n" + 
+        		"          <section>\r\n" +  
         		"        </section>");
 		ArrayList<CarElement> cars = DatabaseConnection.readfromDatabase();
         
@@ -89,15 +88,15 @@ public class FrontEndConnection extends HttpServlet {
             		"  <div class=\"card-body\">\r\n" + 
             		"    <h5 class=\"card-title\">"+c.getBrand()+" "+c.getType()+"</h5>\r\n" + 
             		"    <p class=\"card-text\">\r\n" + 
-            		"		<strong>Name:</strong>"+c.getName() +"\r\n" + 
+            		"		<strong>Name:</strong> "+c.getName() +"\r\n" + 
             		"            <br>\r\n" + 
-            		"            <strong>Ort:</strong>"+c.getOrt()+"\r\n" + 
+            		"            <strong>Ort:</strong> "+c.getLocation()+"\r\n" + 
             		"            <br>\r\n" + 
             		"            <strong>Telefon:</strong> "+c.getPhonenumber()+"\r\n" + 
             		"            <br>\r\n" + 
             		"            <strong>E-Mail:</strong> "+c.getMail()+"\r\n" + 
             		"            <br>\r\n" + 
-            		"            <strong>Automarke:</strong>"+c.getBrand()+"\r\n" + 
+            		"            <strong>Automarke:</strong> "+c.getBrand()+"\r\n" + 
             		"            <br>\r\n" + 
             		"            <strong>Autotyp:</strong> "+c.getType()+"\r\n" + 
             		"            <br>\r\n" + 
@@ -108,13 +107,13 @@ public class FrontEndConnection extends HttpServlet {
             		"            <strong>Beschreibung:</strong> "+c.getDescription()+" \r\n" + 
             		"            <br>	\r\n" + 
             		"	</p>\r\n" + 
-            		"    <a href=\"#\" class=\"btn btn-primary\">Mieten</a>\r\n" + 
+            		"    <a href=\"mailto:"+c.getMail()+"?subject=RentMyCar%20Autovermietung&amp;body=Hallo%20"+c.getName()+",%0D%0A%0D%0Aich%20wollte%20Ihnen%20mitteilen,%20dass%20ich%20Interesse%20an%20Ihrem%20Auto%20"+c.getBrand()+"%20"+c.getType()+"%20habe.%20Bitte%20geben%20Sie%20mir%20eine%20Rueckmeldung,%20ob%20das%20Auto%20aktuell%20zur%20Verfuegung%20steht.%0D%0A%0D%0AViele%20Gruesse"+"\" class=\"btn btn-primary\">Mieten</a>\r\n" + 
             		"  </div>\r\n" + 
             		"</div>"
             		+ "<br>");
 		}
-        
 
+        
 
         out.println("       </div>\r\n" + 
         		"      </div>\r\n" + 
@@ -137,7 +136,7 @@ public class FrontEndConnection extends HttpServlet {
 		CarElement car1 = new CarElement(
 				element_id,
 				request.getParameter("name"), 
-				request.getParameter("city"), 
+				request.getParameter("location"), 
 				request.getParameter("email"),
 				request.getParameter("phone"), 
 				request.getParameter("brand"),
