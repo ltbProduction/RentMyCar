@@ -11,5 +11,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Program Files/MySQL/Connector J 8.0/mysql-connector-java-8.0.18.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomcat-9.0.27/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/apache-tomcat-9.0.27/lib/jstl-1.2.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
