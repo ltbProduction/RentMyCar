@@ -1,8 +1,9 @@
 package com.RentMyCar;
 
-import java.sql.Blob;
+import java.io.InputStream;
+//import java.sql.Blob;
 import java.sql.Date;
-
+//import javax.servlet.http.Part;
 public class CarElement {
 
 	//Attribute eines Eintrages
@@ -16,12 +17,12 @@ public class CarElement {
 	private String fuel;
 	private String description;
 	private double price;
-	private String image;
+	private InputStream photo;
 	
 	
 	
 	public CarElement(int element_id, String name, String location, String mail, String phonenumber, String brand, String type, String fuel,
-			String description, double price) {
+			String description, double price, InputStream photo) {
 		this.element_id = element_id;
 		this.name = name;
 		this.location = location;
@@ -32,8 +33,7 @@ public class CarElement {
 		this.fuel = fuel;
 		this.description = description;
 		this.price = price;
-
-		//this.picture = picture;
+		this.photo = photo;
 	}
 
 	public String getName() {
@@ -90,11 +90,11 @@ public class CarElement {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getImage() {
-		return image;
+	public InputStream getPhoto() {
+		return photo;
 	}
-	public void setImage(String picture) {
-		this.image = picture;
+	public void setPhoto(InputStream photo) {
+		this.photo = photo;
 	}
 	public Date getCreated_at() {
 		return created_at;
