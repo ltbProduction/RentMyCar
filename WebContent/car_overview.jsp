@@ -58,7 +58,7 @@
       <div class="row">
         <div class="col-lg-6">
           <h1 class="mt-5">Unsere Autos</h1>
-          <p>Diese Autos sind derzeit zur Miete verfügbar.</p>
+          <p>Diese Autos sind derzeit zur Miete abrufbar.</p>
 
 
 	<c:forEach items="${cars}" var="car">
@@ -115,7 +115,9 @@
     </div>
 
 
-
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
