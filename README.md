@@ -5,15 +5,19 @@
 * Contributors: Linus Brugger, Lukas Blunck, Robin Birkhofer
 
 ## Documentation
-With the help of this web-application, the users can publish their cars which they want to rent to other people. The users can put several specifications about their cars in a form on the website. The data is saved on a database. The users are also able to display an overview about the cars of other people with the specifications of the cars. The website helps to rent cars which are shown on the overview for a specific price.  
+With the help of this web-application, the users can publish their cars which they want to rent to other people. The users can put several specifications about their cars in a form on the website. The data is saved on a database. The users are also able to display an overview about the cars of other people with the specifications of the cars and a picture. The website helps to rent cars which are shown on the overview for a specific price and makes it easy to contact the owner of the car.  
 
 ### Technologies
 The web-application uses the following technology stack:
-* HTML, CSS, Javascript
+* HTML
+* CSS
+* JavaServer Pages Standard Tag Library (JSTL)
+* Javascript
 * Frameworks (client-side): Bootstrap
 * Java Servlet
 * Tomcat webserver
 * MySQL Database
+
 ### Preconditions and Installation
 The following preconditions are required to run this application:
 1. Tomcat running
