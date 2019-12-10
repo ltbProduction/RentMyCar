@@ -90,7 +90,7 @@
 					<c:out value="${car.type}" />
 					<br> <strong>Kraftstoff:</strong>
 					<c:out value="${car.fuel}" />
-					<br> <strong>Preis pro Stunde:</strong>
+					<br> <strong>Preis pro Tag in EUR:</strong>
 					<c:out value="${car.price}" />
 					<br> <strong>Beschreibung:</strong>
 					<c:out value="${car.description}" />
