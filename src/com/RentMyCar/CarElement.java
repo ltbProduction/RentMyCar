@@ -1,14 +1,12 @@
 package com.RentMyCar;
 
-import java.io.InputStream;
-//import java.sql.Blob;
 import java.sql.Date;
-//import javax.servlet.http.Part;
+
 public class CarElement {
 
 	//Attribute eines Eintrages
-	private int element_id;
-	private String name;
+	private String firstName;
+	private String lastName;	
 	private String location;
 	private String mail;
 	private String phonenumber;
@@ -17,14 +15,18 @@ public class CarElement {
 	private String fuel;
 	private String description;
 	private double price;
-	private InputStream photo;
+	private String base64image;
+	private Date created_at;
 	
-	
-	
-	public CarElement(int element_id, String name, String location, String mail, String phonenumber, String brand, String type, String fuel,
-			String description, double price, InputStream photo) {
-		this.element_id = element_id;
-		this.name = name;
+	public CarElement() {
+		
+	}
+
+
+	public CarElement(String firstName, String lastName, String location, String mail, String phonenumber, String brand, String type, String fuel,
+			String description, double price) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.location = location;
 		this.mail = mail;
 		this.phonenumber = phonenumber;
@@ -33,15 +35,34 @@ public class CarElement {
 		this.fuel = fuel;
 		this.description = description;
 		this.price = price;
-		this.photo = photo;
+
+		//this.picture = picture;
 	}
 
-	public String getName() {
-		return name;
+
+	
+	
+	public String getBase64image() {
+		return base64image;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setBase64image(String base64image) {
+		this.base64image = base64image;
 	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -90,12 +111,7 @@ public class CarElement {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public InputStream getPhoto() {
-		return photo;
-	}
-	public void setPhoto(InputStream photo) {
-		this.photo = photo;
-	}
+
 	public Date getCreated_at() {
 		return created_at;
 	}
@@ -103,13 +119,7 @@ public class CarElement {
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
 	}
-	public int getElement_id() {
-		return element_id;
-	}
 
-	public void setElement_id(int element_id) {
-		this.element_id = element_id;
-	}
-	private Date created_at;
+	
 
 }
