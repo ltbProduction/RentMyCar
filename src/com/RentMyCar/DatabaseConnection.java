@@ -83,7 +83,7 @@ public class DatabaseConnection {
 
 				CarElement ce = new CarElement();
 
-				// Integer elementId = rs.getInt("element_id");
+				Integer elementid = rs.getInt("element_id");
 				String firstName = rs.getString("firstName");
 				String lastName = rs.getString("lastName");
 				String location = rs.getString("location");
@@ -112,7 +112,7 @@ public class DatabaseConnection {
 
 				inputStream.close();
 				outputStream.close();
-
+				ce.setElementId(elementid);
 				ce.setFirstName(firstName);
 				ce.setLastName(lastName);
 				ce.setLocation(location);
@@ -126,7 +126,8 @@ public class DatabaseConnection {
 				ce.setBase64image(base64Image);
 				ce.setCreated_at(created_at);
 				
-						
+			// Checken wielange das Element schon vorhanden ist.
+				ce.setRestDays(CarDAO.checkrestDays(created_at));
 				cars.add(ce);
 			}
 
@@ -137,5 +138,19 @@ public class DatabaseConnection {
 
 		return cars;
 	}
-
+	public static ArrayList<CarElement> checkandreadfromDatabase() throws Exception {
+ //Checken
+		ArrayList<CarElement> cars = new ArrayList<>();
+		cars = readfromDatabase();
+		for (CarElement c : cars) {
+			if(c.getRestDays()<=0) {
+				CarDAO.deletecar(c.getElementId());
+			}
+		}
+		cars = readfromDatabase();
+		
+		
+		
+		return cars;
+	}
 }
