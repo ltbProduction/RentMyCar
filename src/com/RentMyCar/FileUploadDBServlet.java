@@ -90,7 +90,7 @@ public class FileUploadDBServlet extends HttpServlet {
 			// sends the statement to the database server
 			int row = statement.executeUpdate();
 			if (row > 0) {
-				message = "File uploaded and saved into database";
+				message = "Das Auto wurde erfolgreich angelegt!";
 				
 				
 				/*
@@ -119,7 +119,7 @@ public class FileUploadDBServlet extends HttpServlet {
 			request.setAttribute("Message", message);
 			
 			// forwards to the message page
-			getServletContext().getRequestDispatcher("/Upload.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
 		}
 	}
 }

@@ -70,7 +70,7 @@
 					<div class="form-group">
 						<label for="lastName">Nachname</label> <input type="text"
 							name="lastName" size="50" class="form-control" id="lastName"
-							placeholder="Vorname" value="" required="required">
+							placeholder="Nachname" value="" required="required">
 					</div>
 					<div class="form-group">
 						<label for="Ort">Ort</label> <input type="text" name="location"
@@ -129,11 +129,10 @@
 							required="required"></textarea>
 					</div>
 
-
-
-
-
 					<button type="submit" class="btn btn-primary" value="Save">Einstellen</button>
+					<br>
+					<br>
+					
 				</form>
 
 			</div>
