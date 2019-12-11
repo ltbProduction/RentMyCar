@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Base64;
+import java.util.concurrent.TimeUnit;
  
 public class CarDAO {
 	private String databaseURL = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
@@ -79,4 +80,23 @@ public class CarDAO {
          
         return car;
     }
+    public static void deletecar(int elementid) throws Exception {
+    	String sql = "DELETE FROM carelement WHERE element_id = " + String.valueOf(elementid);
+        try (Connection connection = DriverManager.getConnection(databaseURL, user, password)) {
+        	PreparedStatement statement = connection.prepareStatement(sql);
+        	statement.executeQuery();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+           
+            throw ex;
+        }
+    }
+	public static long checkrestDays(java.sql.Date d1) {
+		
+		java.util.Date d2 = new java.util.Date();
+		java.util.Date d3 = (java.util.Date) d1;
+	    long diff = d2.getTime() - d3.getTime();
+	    long time = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+	    return 30-time;
+	}
 }

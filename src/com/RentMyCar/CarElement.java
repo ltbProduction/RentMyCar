@@ -5,6 +5,7 @@ import java.sql.Date;
 public class CarElement {
 
 	//Attribute eines Eintrages
+	private int elementId;
 	private String firstName;
 	private String lastName;	
 	private String location;
@@ -17,6 +18,7 @@ public class CarElement {
 	private double price;
 	private String base64image;
 	private Date created_at;
+	private long restDays;
 	
 	public CarElement() {
 		
@@ -118,6 +120,26 @@ public class CarElement {
 
 	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
+	}
+
+
+	public long getRestDays() {
+		return restDays;
+	}
+
+
+	public void setRestDays(long restDays) {
+		this.restDays = restDays;
+	}
+
+
+	public int getElementId() {
+		return elementId;
+	}
+
+
+	public void setElementId(int elementId) {
+		this.elementId = elementId;
 	}
 
 	
