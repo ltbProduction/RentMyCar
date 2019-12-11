@@ -76,10 +76,7 @@
 					<c:out value="${car.brand} ${car.type}" />
 				</h5>
 				<p class="card-text">
-					<strong>Diese Anzeige ist noch: </strong>
-					<c:out value="${car.restDays}" />
-					<strong> online </strong>
-					<br><strong>Vorname:</strong>
+					<strong>Vorname:</strong>
 					<c:out value="${car.firstName}" />
 					<br> <strong>Nachname:</strong>
 					<c:out value="${car.lastName}" />
@@ -97,7 +94,11 @@
 					<c:out value="${car.price}" />
 					<br> <strong>Beschreibung:</strong>
 					<c:out value="${car.description}" />
-					<br>
+          <br>
+          <br>
+          Diese Anzeige ist noch<strong>
+					<c:out value="${car.restDays}" />
+					Tage </strong>online 
 
 				</p>
 

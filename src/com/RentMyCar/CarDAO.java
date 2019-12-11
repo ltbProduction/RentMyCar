@@ -14,9 +14,9 @@ import java.util.Base64;
 import java.util.concurrent.TimeUnit;
  
 public class CarDAO {
-	private String databaseURL = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
-	private String user = "root";
-	private String password = "RentMyCar2019";
+	private static String databaseURL = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
+	private static String user = "root";
+	private static String password = "RentMyCar2019";
      
     public CarElement get(int id) throws SQLException, IOException {
         CarElement car = null;
