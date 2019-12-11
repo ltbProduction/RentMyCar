@@ -94,7 +94,11 @@
 					<c:out value="${car.price}" />
 					<br> <strong>Beschreibung:</strong>
 					<c:out value="${car.description}" />
-					<br>
+          <br>
+          <br>
+          Diese Anzeige ist noch<strong>
+					<c:out value="${car.restDays}" />
+					Tage </strong>online 
 
 				</p>
 
