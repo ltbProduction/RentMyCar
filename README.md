@@ -12,6 +12,7 @@ The web-application uses the following technology stack:
 * HTML
 * CSS
 * JavaServer Pages Standard Tag Library (JSTL)
+* JavaServer Pages (JSP)
 * Javascript
 * Frameworks (client-side): Bootstrap
 * Java Servlet
