@@ -16,10 +16,7 @@ import javax.servlet.http.Part;
 @MultipartConfig(maxFileSize = 16177215)	// upload file's size up to 16MB
 public class FileUploadDBServlet extends HttpServlet {
 	
-	// database connection settings
-	private static String dbURL = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
-	private static String dbUser = "root";
-	private static String dbPass = "RentMyCar2019";
+
 	
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

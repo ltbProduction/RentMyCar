@@ -1,18 +1,18 @@
-create database if not exists rentmycar;
-use rentmycar;
-create table if not exists carelement (
-	element_id int(6) PRIMARY KEY AUTO_INCREMENT,
+CREATE DATABASE IF NOT EXISTS rentmycar;
+USE rentmycar;
+CREATE TABLE IF NOT EXISTS carelement (
+	element_id INT(6) PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(40) NOT NULL,
-    lastName varchar(40) NOT NULL,
+    lastName VARCHAR(40) NOT NULL,
     location VARCHAR(40) NOT NULL,
     email VARCHAR(60) NOT NULL,
-	phonenumber VARCHAR (20),
-    carbrand Varchar (40) NOT NULL,
-    cartyp Varchar (40),
-    fueltyp Varchar (30) NOT NULL,
-    price decimal (6,2) Not null,
-    description_text text,
-    photo mediumblob,
+	phonenumber VARCHAR (20) NOT NULL,
+    carbrand VARCHAR(40) NOT NULL,
+    cartyp VARCHAR(40) NOT NULL,
+    fueltyp VARCHAR(30) NOT NULL,
+    price DECIMAL(6,2) NOT NULL,
+    description_text TEXT,
+    photo MEDIUMBLOB,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 
