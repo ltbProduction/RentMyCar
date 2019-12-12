@@ -17,7 +17,8 @@ public class CarDAO {
 	private static String databaseURL = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
 	private static String user = "root";
 	private static String password = "RentMyCar2019";
-     
+    // Methode welches ein Element ausliest und es als Element zurückgibt. Element ID muss bekannt sein.
+	
     public CarElement get(int id) throws SQLException, IOException {
         CarElement car = null;
          
@@ -80,6 +81,8 @@ public class CarDAO {
          
         return car;
     }
+    
+    //Methode welches ein Element löscht. Wird bei der Prüfung verwendet.
     public static void deletecar(int elementid) throws Exception {
     	String sql = "DELETE FROM carelement WHERE element_id = " + String.valueOf(elementid);
         try (Connection connection = DriverManager.getConnection(databaseURL, user, password)) {
@@ -91,6 +94,7 @@ public class CarDAO {
             throw ex;
         }
     }
+    //Die restlichen tage werden gecheckt wielange dieses CarElement online ist.
 	public static long checkrestDays(java.sql.Date d1) {
 		
 		java.util.Date d2 = new java.util.Date();
