@@ -82,6 +82,8 @@
 					<c:out value="${car.lastName}" />
 					<br> <strong>Ort:</strong>
 					<c:out value="${car.location}" />
+          <br> <strong>Telefonnummer:</strong>
+          <c:out value="${car.phonenumber}" />
 					<br> <strong>E-Mail:</strong>
 					<c:out value="${car.mail}" />
 					<br> <strong>Automarke:</strong>
