@@ -7,21 +7,91 @@ import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Base64;
 
+
 public class DatabaseConnection {
-	private static String url = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
+	// database connection settings
+	private static  String dbURL = "jdbc:mysql://localhost:3306/rentmycar?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
+	private static String dbUser = "root";
+	private static String dbPass = "RentMyCar2019";
+	
+	//CarElement aauf die Datenbank schreiben
+	public static String writetoDatabase(CarElement car1, InputStream inputStream) {
+		Connection conn = null;	// connection to the database
+		String message = null;	// message will be sent back to client
+		//int car_id = 0;
+		
+		try {
+			// connects to the database
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+			conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
 
+			// constructs SQL statement
+			String sql = "INSERT INTO carelement (firstName, lastName, location, email, phonenumber, carbrand, cartyp, fueltyp, price, description_text, photo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, car1.getFirstName());
+			statement.setString(2, car1.getLastName());
+			statement.setString(3, car1.getLocation());
+			statement.setString(4, car1.getMail());
+			statement.setString(5, car1.getPhonenumber());
+			statement.setString(6, car1.getBrand());
+			statement.setString(7, car1.getType());
+			statement.setString(8, car1.getFuel());
+			statement.setString(9, String.valueOf(car1.getPrice()));
+			statement.setString(10, car1.getDescription());	
+			
 
+			
+			if (inputStream != null) {
+				// fetches input stream of the upload file for the blob column
+				statement.setBlob(11, inputStream);
+			}
+
+			// sends the statement to the database server
+			int row = statement.executeUpdate();
+			if (row > 0) {
+				message = "Das Auto wurde erfolgreich angelegt!";
+				
+				
+				/*
+				 * Statement statement_id = conn.createStatement(); String id_query =
+				 * "SELECT MAX(element_id) FROM carelement"; ResultSet result =
+				 * statement_id.executeQuery(id_query); if (result.next()) { car_id =
+				 * result.getInt(1); }
+				 */
+				 
+
+				
+			}
+		} catch (SQLException ex) {
+			message = "ERROR: " + ex.getMessage();
+			ex.printStackTrace();
+		} finally {
+			if (conn != null) {
+				// closes the database connection
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+		}
+		return message;
+	}
+	
+	
+	//Daten werden ausgelesen
 	public static ArrayList<CarElement> readfromDatabase() throws Exception {
 		ArrayList<CarElement> cars = new ArrayList<CarElement>();
 		try {
 			// create our mysql database connection
-			Connection conn = DriverManager.getConnection(url, "root", "RentMyCar2019");
+			Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
 
 			// our SQL SELECT query.
 			// if you only need a few columns, specify them by name instead of using "*"
