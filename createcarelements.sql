@@ -1,6 +1,7 @@
+create database if not exists rentmycar;
 use rentmycar;
 create table if not exists carelement (
-	element_id int(6) PRIMARY KEY,
+	element_id int(6) PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(40) NOT NULL,
     lastName varchar(40) NOT NULL,
     location VARCHAR(40) NOT NULL,
@@ -12,8 +13,6 @@ create table if not exists carelement (
     price decimal (6,2) Not null,
     description_text text,
     photo mediumblob,
-    starttime date,
-    endtime date,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 
