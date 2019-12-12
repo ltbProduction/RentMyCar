@@ -27,7 +27,7 @@ public class GetCarServlet extends HttpServlet {
         try {
         	// get carelement with photo
             //CarElement car = dao.get(carId);
-            ArrayList<CarElement> cars = DatabaseConnection.readfromDatabase();
+            ArrayList<CarElement> cars = DatabaseConnection.checkandreadfromDatabase();
              
             //request.setAttribute("car", car);
             request.setAttribute("cars", cars);
