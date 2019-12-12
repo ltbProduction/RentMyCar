@@ -23,6 +23,7 @@ The web-application uses the following technology stack:
 The following preconditions are required to run this application:
 1. Tomcat running
 2. MySQL server running on localhost port 3306 with username root, password RentMyCar2019
+3. Run the code from createcarelements.sql in the SQL Workbench to create a matching database and table
 
 Installation steps:
 1. Checkout this repository
