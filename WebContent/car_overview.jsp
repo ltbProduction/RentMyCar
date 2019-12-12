@@ -62,12 +62,6 @@
 
 
 	<c:forEach items="${cars}" var="car">
-		<%-- <tr>      
-        	<h2><c:out value="${car.firstName}" /></h2>
-    <h3><c:out value="${car.lastName}" /></h3>
-    <img src="data:image/jpg;base64,${car.base64image}" width="240" height="300"/>
-
-    </tr> --%>
 
 		<div class="card" style="width: flex;">
 			<img src="data:image/jpg;base64,${car.base64image}" width="100%" height=auto/>
