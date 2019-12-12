@@ -2,12 +2,7 @@ package com.RentMyCar;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -43,9 +38,9 @@ public class FileUploadDBServlet extends HttpServlet {
 				Double.parseDouble(request.getParameter("price")));
 
 		
-		InputStream inputStream = null;	// input stream of the upload file
+		InputStream inputStream = null;	// input stream für das Hochladen der Fotos
 		
-		// obtains the upload file part in this multipart request
+		// übertragen der multipart upload in das inputstream
 		Part filePart = request.getPart("photo");
 		if (filePart != null) {
 			// prints out some information for debugging
@@ -53,72 +48,15 @@ public class FileUploadDBServlet extends HttpServlet {
 			System.out.println(filePart.getSize());
 			System.out.println(filePart.getContentType());
 			
-			// obtains input stream of the upload file
+		
 			inputStream = filePart.getInputStream();
 		}
 		String message = DatabaseConnection.writetoDatabase(car1, inputStream);
-//		Connection conn = null;	// connection to the database
-//		String message = null;	// message will be sent back to client
-//		//int car_id = 0;
-//		
-//		try {
-//			// connects to the database
-//			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-//			conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
-//
-//			// constructs SQL statement
-//			String sql = "INSERT INTO carelement (firstName, lastName, location, email, phonenumber, carbrand, cartyp, fueltyp, price, description_text, photo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-//			PreparedStatement statement = conn.prepareStatement(sql);
-//			statement.setString(1, car1.getFirstName());
-//			statement.setString(2, car1.getLastName());
-//			statement.setString(3, car1.getLocation());
-//			statement.setString(4, car1.getMail());
-//			statement.setString(5, car1.getPhonenumber());
-//			statement.setString(6, car1.getBrand());
-//			statement.setString(7, car1.getType());
-//			statement.setString(8, car1.getFuel());
-//			statement.setString(9, String.valueOf(car1.getPrice()));
-//			statement.setString(10, car1.getDescription());	
-//			
-//
-//			
-//			if (inputStream != null) {
-//				// fetches input stream of the upload file for the blob column
-//				statement.setBlob(11, inputStream);
-//			}
-//
-//			// sends the statement to the database server
-//			int row = statement.executeUpdate();
-//			if (row > 0) {
-//				message = "Das Auto wurde erfolgreich angelegt!";
-//				
-//				
-//				/*
-//				 * Statement statement_id = conn.createStatement(); String id_query =
-//				 * "SELECT MAX(element_id) FROM carelement"; ResultSet result =
-//				 * statement_id.executeQuery(id_query); if (result.next()) { car_id =
-//				 * result.getInt(1); }
-//				 */
-//				 
-//
-//				
-//			}
-//		} catch (SQLException ex) {
-//			message = "ERROR: " + ex.getMessage();
-//			ex.printStackTrace();
-//		} finally {
-//			if (conn != null) {
-//				// closes the database connection
-//				try {
-//					conn.close();
-//				} catch (SQLException ex) {
-//					ex.printStackTrace();
-//				}
-//			}
-			// sets the message in request scope
+
+			// Message für die request scope machen
 			request.setAttribute("Message", message);
 			
-			// forwards to the message page
+			// Zur Ergebniss Seite wechseln
 			getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
 		}
 	}

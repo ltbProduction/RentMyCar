@@ -21,17 +21,16 @@ public class GetCarServlet extends HttpServlet {
  
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //int carId = Integer.parseInt(request.getParameter("id"));
-        //CarDAO dao = new CarDAO();
+
          
         try {
-        	// get carelement with photo
-            //CarElement car = dao.get(carId);
+        	//Die Daten aus der Datenbank auslesen - checken - in ArrayList speichern
             ArrayList<CarElement> cars = DatabaseConnection.checkandreadfromDatabase();
              
-            //request.setAttribute("car", car);
             request.setAttribute("cars", cars);
-             
+            
+            
+            //Seite angeben an wo die Ausgabe stattfindet
             String page = "/car_overview.jsp";
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
             requestDispatcher.forward(request, response);              

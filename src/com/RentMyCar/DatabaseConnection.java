@@ -59,13 +59,7 @@ public class DatabaseConnection {
 				message = "Das Auto wurde erfolgreich angelegt!";
 				
 				
-				/*
-				 * Statement statement_id = conn.createStatement(); String id_query =
-				 * "SELECT MAX(element_id) FROM carelement"; ResultSet result =
-				 * statement_id.executeQuery(id_query); if (result.next()) { car_id =
-				 * result.getInt(1); }
-				 */
-				 
+
 
 				
 			}
@@ -90,20 +84,19 @@ public class DatabaseConnection {
 	public static ArrayList<CarElement> readfromDatabase() throws Exception {
 		ArrayList<CarElement> cars = new ArrayList<CarElement>();
 		try {
-			// create our mysql database connection
+			// mysql connection machen
 			Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
 
-			// our SQL SELECT query.
-			// if you only need a few columns, specify them by name instead of using "*"
+			//statement in sql was alle attribute anzeigt
 			String query = "SELECT * FROM carelement";
 
-			// create the java statement
+			// java statement
 			Statement st = conn.createStatement();
 
-			// execute the query, and get a java resultset
+			// ResuktSet als Ergebniss Parameter
 			ResultSet rs = st.executeQuery(query);
 
-			// iterate through the java resultset
+			// auslesen
 			while (rs.next()) {
 
 				CarElement ce = new CarElement();
@@ -151,7 +144,7 @@ public class DatabaseConnection {
 				ce.setBase64image(base64Image);
 				ce.setCreated_at(created_at);
 				
-			// Checken wielange das Element schon vorhanden ist.
+		// Checken wielange das Element schon vorhanden ist.
 				ce.setRestDays(CarDAO.checkrestDays(created_at));
 				cars.add(ce);
 			}
@@ -164,12 +157,12 @@ public class DatabaseConnection {
 		return cars;
 	}
 	public static ArrayList<CarElement> checkandreadfromDatabase() throws Exception {
- //Checken
+		//Checken ob es Daten gibt welche älter als 30 Tage sind 
 		ArrayList<CarElement> cars = new ArrayList<>();
 		cars = readfromDatabase();
 		for (CarElement c : cars) {
 			if(c.getRestDays()<=0) {
-				CarDAO.deletecar(c.getElementId());
+		CarDAO.deletecar(c.getElementId());
 			}
 		}
 		cars = readfromDatabase();

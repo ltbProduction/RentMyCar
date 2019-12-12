@@ -21,14 +21,14 @@ public class CarDAO {
 	
     public CarElement get(int id) throws SQLException, IOException {
         CarElement car = null;
-         
+         //String befehlt
         String sql = "SELECT * FROM carelement WHERE element_id = ?";
-         
+         //Try ob connection möglich ist
         try (Connection connection = DriverManager.getConnection(databaseURL, user, password)) {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
-             
+             //auslesen des Statement
             if (result.next()) {
                 car = new CarElement();
                 String firstName = result.getString("firstName");
@@ -59,7 +59,7 @@ public class CarDAO {
                  
                 inputStream.close();
 				outputStream.close();
-
+				//car erstellen
 				car.setFirstName(firstName);
 				car.setLastName(lastName);
 				car.setLocation(location);
