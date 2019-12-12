@@ -1,4 +1,0 @@
-Hier kommen die MySQL Befehle welche ich benutzt habe, damit ihr es auch auf eurem MySQL Server testen k�nnt.
-
-create database rentmycar;
-
